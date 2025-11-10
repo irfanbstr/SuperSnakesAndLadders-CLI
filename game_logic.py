@@ -5,13 +5,14 @@ import random
 
 #---------------------------------------initialise Classes-----------------------------------
 class Dice:
-    def __init__(self,number):
+    def __init__(self,amount,number):
+        self.amount = amount
         self.number = number
         self.value = 0
-        print(f"1d{self.number} (Dice) was created.")
+        print(f"{self.amount}d{self.number} (Dice) was created.")
     
     def dice_roll(self):
-        self.value = random.randint(1, self.number)
+        self.value = random.randint(self.amount, self.number)
         return self.value
 # ---
 
@@ -86,7 +87,11 @@ for player in players:
 
 #---------------------------------------setup Game board-----------------------------------
 #Setup Game Board
-mydice = Dice(12) #change the number if we want 1d(n) dice, ex. (6) for 1d6, (10) for 1d10... etc
+mydice = Dice(2,6)  #this is a 2d6 die roll.
+#Dice(a,b)
+#a is the amount of dies, 
+#and b is the sides.
+#change the number if we want (a)d(b) dice, ex. (1,6) for 1d6, (2,10) for 2d10... etc
 
 l1= Ladder(3,51) #start and end positions
 l2= Ladder(6,27)
