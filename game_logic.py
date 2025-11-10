@@ -12,7 +12,7 @@ class Dice:
         print(f"{self.amount}d{self.number} (Dice) was created.")
     
     def dice_roll(self):
-        self.value = random.randint(self.amount, self.number)
+        self.value = random.randint(self.amount, self.number*self.amount)
         return self.value
 # ---
 
